@@ -8,7 +8,8 @@ RUN apk add --update py-pip curl unzip                               && \
     cd plancton-master                                               && \
     pip install -e .                                                 && \
     apk del unzip                                                    && \
-    rm -Rf /var/cache/apk/*                                          
+    rm -f master.zip                                                 && \
+    rm -Rf /var/cache/apk/*
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
