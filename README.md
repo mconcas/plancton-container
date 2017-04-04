@@ -14,9 +14,8 @@ container afterwards.
 ## Build
 
 ```
-docker build -t plancton .
+docker build -t plancton [--build-arg arg=<value>] .
 ```
-
 
 ## Run
 
@@ -32,8 +31,13 @@ Run detached:
 docker run -d -v/var/run/docker.sock:/var/run/docker.sock --name plancton-nodaemon plancton
 ```
 
+## Build variables
 
-## Variables
+_You can provide such variables to Docker via the `--build-arg` switch._
+
+* `BRANCH`: Name of the branch you want to pull Plancton from during build phase.
+
+## Runtime variables
 
 _You can provide such variables to Docker via the `-e` switch._
 
