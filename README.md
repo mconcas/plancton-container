@@ -8,9 +8,12 @@ docker build -t plancton .
 ```
 
 ## Run
-Run in interactive mode
+Run in interactively
 ```
 docker run --rm -it -v/var/run/docker.sock:/var/run/docker.sock --name plancton-nodaemon plancton
 ```
 
-
+Run detached
+```
+docker run --rm -d -v/var/run/docker.sock:/var/run/docker.sock --name plancton-nodaemon plancton
+```
