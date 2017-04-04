@@ -29,13 +29,13 @@ docker run --rm -it -v/var/run/docker.sock:/var/run/docker.sock --name plancton-
 Run detached:
 
 ```
-docker run --rm -d -v/var/run/docker.sock:/var/run/docker.sock --name plancton-nodaemon plancton
+docker run -d -v/var/run/docker.sock:/var/run/docker.sock --name plancton-nodaemon plancton
 ```
 
 
 ## Variables
 
-_You can provide such variables to docker via the `-e` switch._
+_You can provide such variables to Docker via the `-e` switch._
 
 * `PLANCTON_CONF_URL`: URL pointing to the Plancton configuration file.
   Plancton will not start if the configuration is not found.
