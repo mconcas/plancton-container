@@ -3,7 +3,8 @@ Container image containing the [Plancton](https://github.com/mconcas/plancton) d
 It is based on `alpine` Linux.
 It uses a forwarded Docker socket exposed in `/var/run/docker.sock`.
 
-It runs in foreground mode inside the container. 
+The `entrypoint.sh` script periodically downolads configuration pointed in `URL` and puts it in `CONFDIR`.
+It runs in foreground mode inside the container afterwards. 
 
 ## Build
 ```

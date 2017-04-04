@@ -7,8 +7,9 @@ RUN apk add --update py-pip curl unzip                               && \
     unzip master.zip                                                 && \
     cd plancton-master                                               && \
     pip install -e .                                                 && \
-    apk del curl unzip                                               && \
+    apk del unzip                                                    && \
     rm -Rf /var/cache/apk/*                                          
-     
 
-ENTRYPOINT [ "/usr/bin/planctonctl", "nodaemon" ]
+COPY entrypoint.sh /tmp/entrypoint.sh
+
+ENTRYPOINT [ "/tmp/entrypoint.sh" ]
