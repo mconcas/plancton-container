@@ -1,4 +1,4 @@
-Run Plancton from a Docker contaiener
+Run Plancton from a Docker container
 =====================================
 
 Container image containing the [Plancton](https://github.com/mconcas/plancton)
