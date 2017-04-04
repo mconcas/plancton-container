@@ -1,6 +1,7 @@
 # Run Plancton inside a Docker contaiener
 Container image containing the [Plancton](https://github.com/mconcas/plancton) daemon.
-It is based on `alpine` Linx and it uses the native Docker socket at exposed at `/var/run/docker.sock`.
+It is based on `alpine` Linux.
+It uses a forwarded Docker socket at exposed in `/var/run/docker.sock`.
 It runs in foreground mode inside the container. 
 
 ## Build
