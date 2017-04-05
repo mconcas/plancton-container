@@ -13,4 +13,10 @@ RUN apk add --update py-pip curl unzip                                && \
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
+HEALTHCHECK --interval=1m --timeout=5s    \
+    CMD stat /var/run/docker.sock      && \
+        stat /var/run/plancton.pid     && \
+        planctonctl status             && \
+        kill -0 `cat /var/run/plancton.pid`
+
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
