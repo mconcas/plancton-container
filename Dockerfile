@@ -17,6 +17,6 @@ HEALTHCHECK --interval=1m --timeout=5s    \
     CMD stat /var/run/docker.sock      && \
         stat /var/run/plancton.pid     && \
         planctonctl status             && \
-        kill -0 `cat /var/run/plancton.pid` || exit 1
+        kill -0 `cat /var/run/plancton.pid`
 
 ENTRYPOINT [ "/tmp/entrypoint.sh" ]
