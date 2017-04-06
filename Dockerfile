@@ -8,7 +8,7 @@ RUN apk add --update py-pip curl unzip                                && \
     cd plancton-$BRANCH                                               && \
     pip install -e .                                                  && \
     apk del unzip                                                     && \
-    rm -f BRANCH.zip                                                  && \
+    rm -f $BRANCH.zip                                                 && \
     rm -Rf /var/cache/apk/*
 
 COPY entrypoint.sh /tmp/entrypoint.sh
