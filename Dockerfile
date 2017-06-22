@@ -9,7 +9,9 @@ RUN apk add --update py-pip curl unzip                                && \
     pip install -e .                                                  && \
     apk del unzip                                                     && \
     rm -f BRANCH.zip                                                  && \
-    rm -Rf /var/cache/apk/*
+    rm -Rf /var/cache/apk/*                                           && \
+    mkdir -p /var/run/plancton                                        && \
+    touch /var/run/plancton/drain
 
 COPY entrypoint.sh /tmp/entrypoint.sh
 
