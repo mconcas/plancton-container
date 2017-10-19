@@ -11,4 +11,5 @@ while [ $I -lt 2 ]; do
 done
 [ -e /etc/plancton/config.yaml ] || { echo "Could not download configuration from $PLANCTON_CONF_URL, aborting"; exit 1; }
 ( while true; do curl -sSLf ${PLANCTON_CONF_NOSSLVERIFY:+-k} -o /etc/plancton/config.yaml "$PLANCTON_CONF_URL" || true; sleep "$PLANCTON_CONF_UPDATE"; done; )&
+[[ $PLANCTON_START_DRAIN ]] && planctonctl drain
 planctonctl nodaemon
